@@ -1,12 +1,12 @@
 <script>
-import AppComponent from "./components/AppComponent.vue"
+import EventComponent from "./components/EventComponent.vue"
 
 import axios from 'axios'; //importo Axios
 import { store } from "./store.js" //state management
 
 export default {
 	components: {
-		AppComponent
+		EventComponent
 	},
 	data() {
 		return {
@@ -32,7 +32,7 @@ export default {
 
 <template>
 	<main>
-		<AppComponent />
+		<EventComponent />
 
 		<button class="btn btn-primary">Primary button</button>
 	</main>
