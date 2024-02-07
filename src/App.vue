@@ -33,8 +33,6 @@ export default {
 <template>
 	<main>
 		<EventComponent />
-
-		<button class="btn btn-primary">Primary button</button>
 	</main>
 </template>
 
