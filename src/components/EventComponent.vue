@@ -45,7 +45,7 @@ export default {
                     <div class="card my-3" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">{{ event.name }}</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">{{ event.user.name }}</h6>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">{{ event.user ? event.user.name : "User Unknown" }}</h6>
                             <p class="card-text">Available Tickets: {{ event.available_tickets }}</p>
                             <p class="card-text">Date: {{ event.date }}</p>
                         </div>
