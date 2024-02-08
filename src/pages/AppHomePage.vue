@@ -1,4 +1,6 @@
 <script>
+import { store } from "../store.js" //state management
+
 
 export default {
 	name: "AppHomePage",
@@ -17,8 +19,9 @@ export default {
 </script>
 
 <template>
-	
-	<h1>Homepage</h1>
+	<main>
+        <h1>Homepage</h1>
+    </main>
 	
 </template>
 

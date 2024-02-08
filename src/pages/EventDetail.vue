@@ -3,7 +3,7 @@ import { store } from "../store.js" //state management
 
 
 export default {
-	name: "AppShop",
+	name: "EventDetail",
 	data() {
 		return {
 			store
@@ -20,7 +20,7 @@ export default {
 
 <template>
 	
-	<h1>SHOP</h1>
+	<h1>dettaglio</h1>
 	
 </template>
 

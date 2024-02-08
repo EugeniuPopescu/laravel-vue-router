@@ -5,7 +5,21 @@ import { store } from "./store.js" //state management
 export default {
 	data() {
 		return {
-			store
+			store,
+			menuItems: [
+				{
+					routeName: "home",
+					label: "Home"
+				},
+				{
+					routeName: "shop",
+					label: "Shop"
+				},
+				{
+					routeName: "events",
+					label: "Events"
+				},
+			],
 		}
 	},
 	mounted() {
@@ -27,14 +41,21 @@ export default {
 
 <template>
 	<header class="bg-info">
-		<div class="container">
-			<h1>Header</h1>
+		<div class="container py-4">
+			<h1>
+				<div class="row">
+					<div v-for="(item, index) in menuItems" :key="index" class="col-4">
+						<router-link :to="{name: item.routeName}" class="nav-link">
+							{{ item.label }}
+						</router-link>
+					</div>
+				</div>
+			</h1>
 		</div>
 	</header>
 	
-	<main>
-		<router-view> </router-view>
-	</main>
+	<router-view></router-view>
+	
 </template>
 
 <style lang="scss">
