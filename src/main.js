@@ -1,22 +1,25 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
 
 // importo bootstrap (js)
-import * as bootstrap from 'bootstrap'
+import * as bootstrap from "bootstrap";
 
 /* import the fontawesome core */
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from "@fortawesome/fontawesome-svg-core";
 
 /* import font awesome icon component */
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 /* import specific icons */
-import { faHome } from '@fortawesome/free-solid-svg-icons'
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+
+import { router } from "./router";
 
 /* add icons to the library */
 library.add(faHome);
 
 window.vue = {};
 window.vue.App = createApp(App)
-    .component('font-awesome-icon', FontAwesomeIcon)
-    .mount('#app');
+  .use(router)
+  .component("font-awesome-icon", FontAwesomeIcon)
+  .mount("#app");

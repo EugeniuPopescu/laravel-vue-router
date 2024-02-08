@@ -1,13 +1,8 @@
 <script>
-import EventComponent from "./components/EventComponent.vue"
-
 import axios from 'axios'; //importo Axios
 import { store } from "./store.js" //state management
 
 export default {
-	components: {
-		EventComponent
-	},
 	data() {
 		return {
 			store
@@ -31,8 +26,14 @@ export default {
 </script>
 
 <template>
+	<header class="bg-info">
+		<div class="container">
+			<h1>Header</h1>
+		</div>
+	</header>
+	
 	<main>
-		<EventComponent />
+		<router-view> </router-view>
 	</main>
 </template>
 
