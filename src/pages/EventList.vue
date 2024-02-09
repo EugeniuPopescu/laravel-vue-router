@@ -24,13 +24,23 @@ export default {
             console.log("EventList does things");
             axios.get(this.store.apiEvents + this.store.eventsEndPoint).then(risultato => {
                 // if di controllo
-                if ( risultato.status === 200 && risultato.data.success) {
-                    console.log(risultato.data.payload);
-                    this.store.eventList = risultato.data.payload;
-                } else {
-                    // controllare statusCode, presenza e veridicità di data.success
-                    console.error("qualcosa è andato storto...");
-                }
+                if (risultato.status === 200) {
+                    if (risultato.data.success) {
+                        console.log(risultato.data.payload);
+                        this.store.eventList = risultato.data.payload;
+                    } else {
+                        // controllare statusCode, presenza e veridicità di data.success
+                        console.error("qualcosa è andato storto...");
+                    }
+                } else if (result.status === 301) {
+					console.error("Ops... ciò che cerchi non si trova più qui.");
+				} else if (result.status === 400) {
+					console.error("Ops... non riusciamo a comprendere ciò che hai richiesto.");
+				} else if (result.status === 404) {
+					console.error("Ops... non riusciamo a trovare ciò che hai richiesto.");
+				} else if (result.status === 500) {
+					console.error("Ops... ci scusiamo per l'inconveniente, stiamo spegnendo l'incendio.");
+				}   
             }).catch(errore => {
                 console.error(errore);
             });
