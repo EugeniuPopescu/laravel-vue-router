@@ -22,7 +22,10 @@ export default {
     methods: {
         getEventList() {
             console.log("EventList does things");
-            axios.get(this.store.apiEvents + this.store.eventsEndPoint).then(risultato => {
+
+            let url = this.store.apiEvents + this.store.eventsEndPoint;
+
+            axios.get(url).then(risultato => {
                 // if di controllo
                 if (risultato.status === 200) {
                     if (risultato.data.success) {

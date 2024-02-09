@@ -4,13 +4,15 @@ import { store } from "../store.js" //state management
 
 export default {
 	name: "EventDetail",
+	props: ["id"],
 	data() {
 		return {
-			store
+			store,
+			event: null,
 		}
 	},
 	mounted() {
-		
+		this.event = this.store.eventList.find(item => item.id == this.id);
 	},
 	methods: {
 		
@@ -20,7 +22,10 @@ export default {
 
 <template>
 	<div class="container">
-		<h1>dettaglio</h1>
+		<div class="row">
+			<h1>Event Name: {{ event?.name }}</h1>
+			<h2>User Organizator: {{ event?.user.name }}</h2>
+		</div>
 	</div>
 	
 </template>
