@@ -20,7 +20,7 @@ export default {
 
 <template>
 	<div class="container">
-		<h1 class="text-center py-4">Hompage</h1>
+		<h1 class="text-center">Hompage</h1>
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ab qui, blanditiis excepturi nam numquam aliquid autem dicta eveniet delectus voluptatibus ut saepe tempora officiis facere eum labore fugit commodi.
 		Ipsum culpa at magnam sequi. Corporis voluptatum fuga quod perspiciatis delectus, dolorum eveniet magni ipsum soluta rem quis pariatur rerum ipsam esse sequi, quos, nihil iusto aut tenetur molestias id.
 		Quas nemo accusamus officiis magni asperiores ab cum commodi ipsa quae suscipit sit, quam debitis dolore porro itaque error similique, molestiae voluptates a omnis officia eveniet! Veritatis ut ad ex.

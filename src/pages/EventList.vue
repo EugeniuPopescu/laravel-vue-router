@@ -42,7 +42,7 @@ export default {
 <template>
     <div class="container">
         <div>
-            <h1 class="text-center py-4">Events</h1>
+            <h1 class="text-center">Events</h1>
             <div class="row">
                 <EventCard  v-for="evento in store.eventList" :item="evento"/>
             </div>

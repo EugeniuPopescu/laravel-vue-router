@@ -21,10 +21,13 @@ export default {
 </script>
 
 <template>
+    <header>
+        <AppHeader />
+    </header>
 	
-	<AppHeader />
-	
-	<router-view></router-view>
+	<main class="py-5">
+        <router-view></router-view>
+    </main>
 	
 </template>
 

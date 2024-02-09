@@ -24,7 +24,7 @@ export default {
 
 <template>
     <header class="bg-info">
-		<div class="container py-4">
+		<div class="container py-2">
 			<h1>
 				<div class="row text-center">
 					<div class="col-3 text-start">
@@ -46,6 +46,6 @@ export default {
 
 <style scoped>
 img {
-	width: 5rem;
+	width: 4rem;
 }
 </style>
