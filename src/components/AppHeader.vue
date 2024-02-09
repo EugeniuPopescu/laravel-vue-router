@@ -5,15 +5,15 @@ export default {
         return {
             menuItems: [
 				{
-					routeName: "home",
+					routeName: "Home",
 					label: "Home"
 				},
 				{
-					routeName: "shop",
+					routeName: "Shop",
 					label: "Shop"
 				},
 				{
-					routeName: "events",
+					routeName: "Events",
 					label: "Events"
 				},
 			],

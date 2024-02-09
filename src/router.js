@@ -10,24 +10,24 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "home",
+      name: "Home",
       component: AppHomePage,
     },
     {
       path: "/shop",
-      name: "shop",
+      name: "Shop",
       component: AppShop,
     },
     {
       path: "/events",
-      name: "events",
+      name: "Events",
       component: EventList,
     },
     {
       path: "/events/:id",
-      name: "event",
+      name: "Event-detail",
       component: EventDetail,
-      proprs: true,
+      props: true,
     },
   ],
 });

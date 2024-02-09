@@ -17,8 +17,8 @@ export default {
             </div>
 
             <div class="card-footer text-center">
-                <router-link :to="{ name: 'event', params: { id: item.id } }" class="btn btn-primary">
-                    <span>Dettaglio</span>
+                <router-link :to="{ name: 'Event-detail', params: { id: item.id } }" class="btn btn-success">
+                    <span>Dettail</span>
                 </router-link>
             </div>
         </div>
