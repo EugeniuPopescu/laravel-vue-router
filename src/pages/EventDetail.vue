@@ -19,8 +19,9 @@ export default {
 </script>
 
 <template>
-	
-	<h1>dettaglio</h1>
+	<div class="container">
+		<h1>dettaglio</h1>
+	</div>
 	
 </template>
 

@@ -1,10 +1,14 @@
 <script>
-import { store } from "../store.js" //state management
-import register from "../debug" //per debuggare il componente da console
+import { store } from "../store.js"; //state management
+import register from "../debug"; //per debuggare il componente da console
 import axios from 'axios'; //importo Axios
+import EventCard from "../components/EventCard.vue";
 
 export default {
     name: "EventList",
+    components: {
+        EventCard
+    },
     data() {
         return {
             store
@@ -38,24 +42,9 @@ export default {
 <template>
     <div class="container">
         <div>
-            <h1 class="text-center fw-bold text-info">Events</h1>
+            <h1 class="text-center py-4">Events</h1>
             <div class="row">
-                <div class="col-4" v-for="event in this.store.eventList">
-                    <!-- event card -->
-                    <div class="card my-3" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ event.name }}</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">{{ event.user ? event.user.name : "User Unknown" }}</h6>
-                            <p class="card-text">Available Tickets: {{ event.available_tickets }}</p>
-                            <p class="card-text">Date: {{ event.date }}</p>
-                        </div>
-                        <div class="card-footer text-center">
-                            <router-link :to="{ name: 'event', params: { id: event.id } }" class="btn btn-primary">
-							    <span>event</span>
-						    </router-link>
-                        </div>
-                    </div>
-                </div>
+                <EventCard  v-for="evento in store.eventList" :item="evento"/>
             </div>
         </div>
     </div>

@@ -1,58 +1,28 @@
 <script>
 import axios from 'axios'; //importo Axios
-import { store } from "./store.js" //state management
+import { store } from "./store.js"; //state management
+import AppHeader from './components/AppHeader.vue';
+
 
 export default {
-	data() {
-		return {
-			store,
-			menuItems: [
-				{
-					routeName: "home",
-					label: "Home"
-				},
-				{
-					routeName: "shop",
-					label: "Shop"
-				},
-				{
-					routeName: "events",
-					label: "Events"
-				},
-			],
-		}
-	},
-	mounted() {
-		this.doThings();
+    components: {
+        AppHeader,
+    },
+    data() {
+        return {
+            store,
+        };
+    },
+    mounted() {
+    },
+    methods: {},
 
-		// axios.get("indirizzo").then(risultato => {
-		// 	console.log(risultato);
-		// }).catch(errore => {
-		// 	console.error(errore);
-		// });
-	},
-	methods: {
-		doThings() {
-			console.log("App.vue does things");
-		}
-	}
 }
 </script>
 
 <template>
-	<header class="bg-info">
-		<div class="container py-4">
-			<h1>
-				<div class="row">
-					<div v-for="(item, index) in menuItems" :key="index" class="col-4">
-						<router-link :to="{name: item.routeName}" class="nav-link">
-							{{ item.label }}
-						</router-link>
-					</div>
-				</div>
-			</h1>
-		</div>
-	</header>
+	
+	<AppHeader />
 	
 	<router-view></router-view>
 	
