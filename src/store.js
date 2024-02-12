@@ -5,4 +5,5 @@ export const store = reactive({
   eventList: [],
   apiEvents: "http://127.0.0.1:8000/api/",
   eventsEndPoint: "events/",
+  tagsEndPoint: "tags/",
 });

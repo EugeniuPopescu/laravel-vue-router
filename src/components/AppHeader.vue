@@ -16,6 +16,10 @@ export default {
 					routeName: "Events",
 					label: "Events"
 				},
+				{
+					routeName: "Tags",
+					label: "Tags"
+				},
 			],
         }
     },
@@ -33,7 +37,7 @@ export default {
 							<img src="/public/router.png" alt="">
 						</a>
 					</div>
-					<div v-for="(item, index) in menuItems" :key="index" class="col-3 d-flex justify-content-center align-items-center">
+					<div v-for="(item, index) in menuItems" :key="index" class="col-2 d-flex justify-content-center align-items-center">
 						<router-link :to="{name: item.routeName}" class="nav-link">
 							<h3>{{ item.label }}</h3>
 						</router-link>

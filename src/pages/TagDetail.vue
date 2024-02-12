@@ -5,27 +5,27 @@ import axios from 'axios'; //importo Axios
 
 
 export default {
-	name: "EventDetail",
+	name: "TagDetail",
 	props: ["id"],
 	data() {
 		return {
 			store,
-			event: null,
+			tag: null,
 			error: false,
 		}
 	},
 	mounted() {
-		// this.event = this.store.eventList.find(item => item.id == this.id);
+		// this.tag = this.store.eventList.find(item => item.id == this.id);
 		this.getEventDetail();
 	},
 	methods: {
 		getEventDetail() {
-            let url = this.store.apiEvents + this.store.eventsEndPoint + this.id;
+            let url = this.store.apiEvents + this.store.tagsEndPoint + this.id;
 
             axios.get(url).then(result => {
                 if (result.status === 200) {
                     if (result.data.success) {
-                        this.event = result.data.payload;
+                        this.tag = result.data.payload;
                     } else {
                         console.error("Ops... non siamo in grado di soddisfare la richiesta.");
 						this.error = true;
@@ -55,26 +55,19 @@ export default {
 			<h1>Si è verificato un errore</h1>
 		</div>
 		<div v-else>
-			<div v-if="!event" class="d-flex justify-content-center align-items-center">
+			<div v-if="!tag" class="d-flex justify-content-center align-items-center">
 			<h1>Loading..</h1>
 			</div>
-				<div class="row py-3 text-warning">
-					<h1>Event Name: {{ event?.name }}</h1>
-					<h2>User Organizator: {{ event?.user.name }}</h2>
-					<h3>User email: <a href="#">{{ event?.user.email }}</a></h3>
-					<h4>Available Tickets: {{ event?.available_tickets }}</h4>
-					<h4>Event date: {{ event?.date }}</h4>
-					<div class="col-6">
-						<router-link :to="{ name: 'Tag-detail', params: { id: event?.tags.id } }">
-							<span class="mx-1 badge rounded-pill text-bg-success fs-4" v-for="tag in event?.tags">
-								#{{tag.name }}
-							</span>
-						</router-link>
-					</div>
+				<div class="py-3">
+					<h1 class="badge rounded-pill text-bg-success fs-1">Tag Name: #{{ tag?.name }}</h1>
+					<h2>
+						Tag Link: <a href=".">{{ tag?.link }}</a>
+					</h2>
+
 
 					<div class="row d-flex justify-content-end">
 						<div class="col-2 py-3">
-							<router-link :to="{ name: 'Events' }" class="btn btn-info">
+							<router-link :to="{ name: 'Tags' }" class="btn btn-info">
 								<span>Go Back</span>
 							</router-link>
 						</div>
