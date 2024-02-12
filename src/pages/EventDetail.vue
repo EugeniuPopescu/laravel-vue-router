@@ -48,6 +48,9 @@ export default {
 
 <template>
 	<div class="container">
+		<div v-if="!event" class="d-flex justify-content-center align-items-center">
+			<h1>Loading..</h1>
+		</div>
 		<div class="row py-3 text-warning">
 			<h1>Event Name: {{ event?.name }}</h1>
 			<h2>User Organizator: {{ event?.user.name }}</h2>
